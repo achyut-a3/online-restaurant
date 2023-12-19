@@ -1,19 +1,21 @@
-import React, { useState, useEffect } from 'react';
-import classes from './paymentPage.module.css';
-import { getNewOrderForCurrentUser } from '../../services/orderService';
-import Title from '../../components/Title/Title';
-import OrderItemsList from '../../components/OrderItemsList/OrderItemsList';
-import Map from '../../components/Map/Map';
-import PaypalButtons from '../../components/PaypalButtons/PaypalButtons';
+import React, { useState, useEffect } from "react";
+import classes from "./paymentform.module.css";
+import { getNewOrderForCurrentUser } from "../../services/orderService";
+import Title from "../../components/Title/Title";
+import QRimage from "./QR.png";
+import OrderItemsList from "../../components/OrderItemsList/OrderItemsList";
+import Map from "../../components/Map/Map";
+import { Link } from "react-router-dom";
+import GoBackPage from "../GoBackPage";
 
 export default function PaymentPage() {
   const [order, setOrder] = useState();
 
   useEffect(() => {
-    getNewOrderForCurrentUser().then(data => setOrder(data));
+    getNewOrderForCurrentUser().then((data) => setOrder(data));
   }, []);
 
-  if (!order) return;
+  if (!order) return null; // Consider adding a loader or placeholder for the order fetching state
 
   return (
     <>
@@ -40,7 +42,15 @@ export default function PaymentPage() {
 
         <div className={classes.buttons_container}>
           <div className={classes.buttons}>
-            <PaypalButtons order={order} />
+            <Link to="/orders">
+              <button className={classes.viewOrderButton}>View Order</button>
+            </Link>
+            <GoBackPage />
+          </div>
+
+          <div className={classes.qrCode}>
+            <img src={QRimage} alt="QR Code" />
+            <p>Scan with pay</p>
           </div>
         </div>
       </div>

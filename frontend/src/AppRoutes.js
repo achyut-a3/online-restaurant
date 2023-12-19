@@ -1,16 +1,16 @@
-import React from 'react';
-import { Route, Routes } from 'react-router-dom';
-import CartPage from './pages/Cart/CartPage';
-import FoodPage from './pages/Food/FoodPage';
-import HomePage from './pages/Home/HomePage';
-import LoginPage from './pages/Login/LoginPage';
-import RegisterPage from './pages/Register/RegisterPage';
-import AuthRoute from './components/AuthRoute/AuthRoute';
-import CheckoutPage from './pages/Checkout/CheckoutPage';
-import PaymentPage from './pages/Payment/PaymentPage';
-import OrderTrackPage from './pages/OrderTrack/OrderTrackPage';
-import ProfilePage from './pages/Profile/ProfilePage';
-import OrdersPage from './pages/Orders/OrdersPage';
+import React from "react";
+import { Route, Routes } from "react-router-dom";
+import FoodPage from "./pages/Food/FoodPage";
+import HomePage from "./pages/Home/HomePage";
+import LoginPage from "./pages/Login/LoginPage";
+import RegisterPage from "./pages/Register/RegisterPage";
+import AuthRoute from "./components/AuthRoute/AuthRoute";
+import OrderTrackPage from "./pages/OrderTrack/OrderTrackPage";
+import ProfilePage from "./pages/Profile/ProfilePage";
+import OrdersPage from "./pages/Orders/OrdersPage";
+import PaymentPage from "./pages/OrderForm/PaymentPage";
+import CartPage from "./pages/Cart/CartPage";
+import CheckoutPage from "./pages/Checkout/CheckoutPage";
 
 export default function AppRoutes() {
   return (

@@ -1,22 +1,23 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import Price from '../../components/Price/Price';
-import Title from '../../components/Title/Title';
-import { useCart } from '../../hooks/useCart';
-import classes from './cartPage.module.css';
-import NotFound from '../../components/NotFound/NotFound';
+import React from "react";
+import { Link } from "react-router-dom";
+import Price from "../../components/Price/Price";
+import Title from "../../components/Title/Title";
+import { useCart } from "../../hooks/useCart";
+import classes from "./cartPage.module.css";
+import NotFound from "../../components/NotFound/NotFound";
+import GoBackPage from "../GoBackPage";
 export default function CartPage() {
   const { cart, removeFromCart, changeQuantity } = useCart();
   return (
     <>
-      <Title title="Cart Page" margin="1.5rem 0 0 2.5rem" />
+      <Title title="Order Page" margin="1.5rem 0 0 2.5rem" />
 
       {cart.items.length === 0 ? (
-        <NotFound message="Cart Page Is Empty!" />
+        <NotFound message="Order Page Is Empty!" />
       ) : (
         <div className={classes.container}>
           <ul className={classes.list}>
-            {cart.items.map(item => (
+            {cart.items.map((item) => (
               <li key={item.food.id}>
                 <div>
                   <img src={`${item.food.imageUrl}`} alt={item.food.name} />
@@ -28,7 +29,9 @@ export default function CartPage() {
                 <div>
                   <select
                     value={item.quantity}
-                    onChange={e => changeQuantity(item, Number(e.target.value))}
+                    onChange={(e) =>
+                      changeQuantity(item, Number(e.target.value))
+                    }
                   >
                     <option>1</option>
                     <option>2</option>
@@ -67,8 +70,9 @@ export default function CartPage() {
               </div>
             </div>
 
-            <Link to="/checkout">Proceed To Checkout</Link>
-          </div>
+            <Link to="/checkout">Proceed To Form</Link>
+            </div>
+            <GoBackPage/>
         </div>
       )}
     </>

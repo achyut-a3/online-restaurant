@@ -4,12 +4,10 @@
 
 - [x] Install [NodeJs](https://nodejs.org/en)
 - [x] Install [Visual Studio Code](https://code.visualstudio.com)
-- [x] Install [Git](https://git-scm.com)
 
 ## 2. Creating React App
 
 - [x] Create React App
-- [x] Remove Unnecessary Codes
 
 ## 3. Adding Header
 
@@ -253,14 +251,7 @@
 - [x] Create PaymentPage component
   - [x] Add to Routes
   - [x] CSS
-- [x] Update Order Router
-  - [x] Add newOrderForCurrentUser
-  - [x] Add pay api
-- [x] Create PaypalButtons Component
-  - [x] npm install @paypal/react-paypal-js
-  - [x] Add clearCart to useCart
-  - [x] Get clientId
-  - [x] Create Sandbox user for testing
+        -Add Qr scan to pay the bill/esewa number
 
 ## 17. Order Track Page
 

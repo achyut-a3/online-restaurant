@@ -1,9 +1,9 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { useCart } from '../../hooks/useCart';
-import classes from './header.module.css';
-import { useAuth } from '../../hooks/useAuth';
-
+import React from "react";
+import { Link } from "react-router-dom";
+import { useCart } from "../../hooks/useCart";
+import classes from "./header.module.css";
+import { useAuth } from "../../hooks/useAuth";
+import logo from "././saathi.png";
 export default function Header() {
   const { user, logout } = useAuth();
 
@@ -13,7 +13,11 @@ export default function Header() {
     <header className={classes.header}>
       <div className={classes.container}>
         <Link to="/" className={classes.logo}>
-          Food Mine!
+          <img
+            style={{ height: "50px", buttom: "10px" }}
+            src={logo}
+            alt="logo"
+          />
         </Link>
         <nav>
           <ul>
@@ -32,7 +36,7 @@ export default function Header() {
 
             <li>
               <Link to="/cart">
-                Cart
+                Order
                 {cart.totalCount > 0 && (
                   <span className={classes.cart_count}>{cart.totalCount}</span>
                 )}
